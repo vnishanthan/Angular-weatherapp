@@ -1,0 +1,86 @@
+<div class="jumbotron">
+ <h1 class="text-center my-4">Angular Weather App</h1>
+</div>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12"><h3 class="text-center my-4">Search for Weather:</h3>
+
+              <form  [formGroup]="weatherSearchForm" (ngSubmit)="sendToAPIXU(weatherSearchForm.value)">
+                <div class="form-group">
+             <input
+               class="form-control"
+               type="text"
+               id="weatherLocation"
+
+               aria-describedby="weatherLocation"
+               placeholder="Please input a Location Eg.Paris"
+               formControlName="location"
+             />
+
+            </div>
+            <div class="text-center">
+             <button type="submit" class="btn btn-success btn-md">
+               Search for the weather</button>
+            </div>
+          </form>
+
+
+    </div>
+    </div>
+    <div class="row">
+    <div class="col-md-12">
+      <h3 class="text-center my-4">Current Weather Details:</h3>
+    <!--  <p class="text-center">
+        Current weather conditions: {{ this.weatherData?.current.condition.text
+        }}.
+      </p>
+      <p class="text-center">
+        Temperature in Degrees Celsius: {{ this.weatherData?.current.temp_c }}
+      </p>
+      <p class="text-center">
+        Temperature in Degrees Farenheit: {{ this.weatherData?.current.temp_f }}
+      </p>
+      <p class="text-center">
+        Feels like in Degrees Celsius: {{ this.weatherData?.current.feelslike_c
+        }}
+      </p>
+      <p class="text-center">
+        Feels like in Degrees Farenheit: {{
+        this.weatherData?.current.feelslike_f }}
+      </p>
+      <p class="text-center">
+        Location Searched: {{ this.weatherData?.location.name }}, {{
+        this.weatherData?.location.country }}.
+      </p>
+      -->
+
+            <table class="table table-striped">
+            <thead>
+                <tr>
+                  <th>Current weather conditions: </th>
+                  <th>  Temperature in Degrees Celsius:</th>
+                  <th>  Feels like in Degrees Celsius:</th>
+                  <th>  Feels like in Degrees Farenheit:</th>
+                  <th> Location Searched:</th>
+                </tr>
+            </thead>
+            <tbody>
+              <tr >
+                <td>{{ this.weatherData?.current.condition.text }}</td>
+                <td>{{this.weatherData?.current.temp_c }}</td>
+                <td>{{this.weatherData?.current.temp_f  }}</td>
+                <td>{{   this.weatherData?.current.feelslike_f }}</td>
+                <td>{{ this.weatherData?.location.name }}, {{
+               this.weatherData?.location.country }}</td>
+              </tr>
+            </tbody>
+          </table>
+
+
+
+    </div>
+        </div>
+
+</div>
